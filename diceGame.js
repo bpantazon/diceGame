@@ -133,7 +133,16 @@ function turnThree(){
 }
 
 function turnFour(){
-	if (results[3]
+	switch (results[3]){
+		case 1: console.log("This battle takes place on a Grassland terrain");
+		case 2: console.log("This battle takes place in Viridian Forest");
+		case 3: console.log("This battle takes place on a Mountainside terrain");
+		case 4: console.log("This battle takes place in Mt. Moon!");
+		case 5: console.log("This battle takes place on the SS Anne cruise ship!");
+		case 6: console.log("This battle takes place on the piers of Vermillion City");
+		case 7: console.log("This battle takes place on an all-water terrain");
+	}
+	return;
 }
 
 function turnFive(){
