@@ -101,10 +101,10 @@ function turnOne(){
 		console.log("You received Eevee, the Evolution Pokemon!");
 		}
 		else if (results[0] === 2){
-		console.log("You received Rattata, the Mouse Pokemon!");
+		console.log("You received Pikachu, the Electric Mouse Pokemon!");
 		}
 		else if (results[0] === 3){
-		console.log("You received Meowth, the Scratch Cat Pokemon!");
+		console.log("You received Charmander, the Fire Lizard Pokemon!");
 	}
 		
 	return;
@@ -130,6 +130,22 @@ function turnThree(){
 		case 2: console.log("You used Tackle!");
 		case 3: console.log("You used Dig!");
 		case 4: console.log("You used Take Down!");
+	}
+}
+
+function turnFour(){
+	
+}
+
+function turnSix(){
+	if (results[5] <= 4){
+		console.log("You defeated your opponent!");
+	}
+	else if (results[5] <= 8 && results[5] >= 5) {
+		console.log("Your attack missed! Opponent knocked you out. You lose.");
+	}
+	else if (results[5] > 12) {
+		console.log("Team Rocket appeared! They stole your Pokemon. You lose.");
 	}
 }
 
