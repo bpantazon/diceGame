@@ -73,6 +73,7 @@ If rolls done = 0,
 Roll using value of index, randomizing by the value of index + 1
 setInterval ()
 */
+
 function rollDie(sides){
 	let result = Math.floor((Math.random() * sides) + 1);
 	return result;
@@ -95,8 +96,13 @@ function takeTurn(){
 	for (let i = 0; i < sides.length; i++) {
 		let rollResult = rollDie(sides[i]);
 		results.push(rollResult);
-		console.log(i);
-		j++;
+		console.log(results);
+		let turnOneRoll = results[i];
+		while (i === 1){
+			if (results === 1){
+				console.log("You received Eevee, a normal-type Pokemon!");
+			}
+		}
 		// add this roll as +1 to the roll counter
 		//check if a roll happened, then count the roll and move on to the next index
 		
@@ -104,48 +110,18 @@ function takeTurn(){
 	
 	}
 	return;
+	console.log(rollResult);
 }
-
 console.log(takeTurn());
 
 
 
-/*
-let rollDThree = rollDieThree();
 
-function rollDieFour(){
+
+/*function rollDieFour(){
 	sides = 4;
 	dice4 = Math.floor((Math.random() * sides) + 1);
 	return dice4
 }
 let rollDFour = rollDieFour();
-
-function rollDieFive(){
-	sides = 5;
-	dice4 = Math.floor((Math.random() * sides) + 1);
-	return dice5
-}
-let rollDFive = rollDieFive();
-
-function rollDieSix(){
-	sides = 6;
-	dice6 = Math.floor((Math.random() * sides) + 1);
-	return dice6;	
-}
-let rollDSix = rollDieSix();
-console.log(rollDSix); 
-
-function rollDieSeven(){
-	sides = 7;
-	dice4 = Math.floor((Math.random() * sides) +1);
-	return dice7
-}
-let rollDSeven = rollDieSeven();
-
-function rollDieTwelve(){
-	sides = 12;
-	dice6 = Math.floor((Math.random() * sides) + 1);
-	return dice12;	
-}
-let rollDTwelve = rollDieTwelve();
 */
