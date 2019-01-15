@@ -73,7 +73,7 @@ If rolls done = 0,
 Roll using value of index, randomizing by the value of index + 1
 setInterval ()
 */
-let sides = [3, 6, 4, 5, 7, 12]; 
+let sides = [3, 6, 4, 7, 8, 12]; 
 let results = [];
 let rolls = 0; 
 
@@ -85,7 +85,6 @@ function rollDie(sides){
 	let result = Math.floor((Math.random() * sides) + 1);
 	return result;
 }
-
 
 function getResults(){
 	for (let i = 0; i < sides.length; i++) {
@@ -106,7 +105,6 @@ function turnOne(){
 		else if (results[0] === 3){
 		console.log("You received Charmander, the Fire Lizard Pokemon!");
 	}
-		
 	return;
 		}
 
@@ -131,10 +129,25 @@ function turnThree(){
 		case 3: console.log("You used Dig!");
 		case 4: console.log("You used Take Down!");
 	}
+	return;
 }
 
 function turnFour(){
-	
+	if (results[3]
+}
+
+function turnFive(){
+	switch (results[4]){
+		case 1: console.log("You are fighting for the Boulder Badge from Pewter City");
+		case 2: console.log("Your are fighting for the Cascade Badge from Cerulean City");
+		case 2: console.log("Your are fighting for the Thunder Badge from Vermillion City");
+		case 2: console.log("Your are fighting for the Rainbow Badge from Celedon City");
+		case 2: console.log("Your are fighting for the Soul Badge from Fuschia City");
+		case 2: console.log("Your are fighting for the Marsh Badge from Saffron City");
+		case 2: console.log("Your are fighting for the Volcano Badge from Cinnabar Island");
+		case 2: console.log("Your are fighting for the Earth Badge from Viridian City");
+	}
+	return;
 }
 
 function turnSix(){
@@ -147,6 +160,7 @@ function turnSix(){
 	else if (results[5] > 12) {
 		console.log("Team Rocket appeared! They stole your Pokemon. You lose.");
 	}
+	return;
 }
 
 
