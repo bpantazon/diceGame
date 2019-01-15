@@ -125,11 +125,11 @@ function turnTwo() {
 
 	
 function turnThree(){
-	if (results[2] === 1){
-		console.log("You used Headbutt!");
-	}
-	else if (results[2] === 2){
-		
+	switch (results[2]){
+		case 1: console.log("You used Headbutt!");
+		case 2: console.log("You used Tackle!");
+		case 3: console.log("You used Dig!");
+		case 4: console.log("You used Take Down!");
 	}
 }
 
