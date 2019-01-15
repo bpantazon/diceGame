@@ -73,56 +73,48 @@ If rolls done = 0,
 Roll using value of index, randomizing by the value of index + 1
 setInterval ()
 */
+let sides = [3, 6, 4, 5, 7, 12]; 
+let results = [];
+let rolls = 0; 
+
+function countRolls(roll) {
+	rolls = rolls + 1; 
+}
 
 function rollDie(sides){
 	let result = Math.floor((Math.random() * sides) + 1);
 	return result;
 }
 
-let rolls = 0; 
-function countRolls(roll) {
-	rolls = rolls + 1; 
-}
 
-function takeTurn(){
-	//put values in order of turns they're used in...finish making the game
-	//counter starting at 0 but increasing by 1 index for every roll/turn output that occurs
-
-	let sides = [3, 6, 4, 5, 7, 12]; 
-	let results = [];
-	let j = 0;
-	
-	//let howManyRolls = 1;
+function getResults(){
 	for (let i = 0; i < sides.length; i++) {
 		let rollResult = rollDie(sides[i]);
 		results.push(rollResult);
 		console.log(results);
-		let turnOneRoll = results[i];
-		j++;
-		while (j === 1){
-			if (results[i] === 1){
-				console.log("You received Eevee, the evolution Pokemon!");
-			}
-			else if (results[i] === 2){
-				console.log("You received Rattata, the mouse Pokemon!");
-			}
-			else if (results[i] === 3){
-				console.log("You received Meowth, the Scratch Cat Pokemon!");
-			}
-		//while (j === 2)
-		//}
-		// add this roll as +1 to the roll counter
-		//check if a roll happened, then count the roll and move on to the next index
-		
-			
-	
 	}
 	return;
-	console.log(rollResult);
 }
+
+function turnOne(){
+		if (results[0] === 1){
+		console.log("You received Eevee, the Evolution Pokemon!");
+		}
+		else if (results[i] === 2){
+		console.log("You received Rattata, the Mouse Pokemon!");
+
+		}
+		else if (results[i] === 3){
+		console.log("You received Meowth, the Scratch Cat Pokemon!");
+	}
+		
+	
+		}
+	return;
+	
+
+
 console.log(takeTurn());
-
-
 
 
 
@@ -133,3 +125,13 @@ console.log(takeTurn());
 }
 let rollDFour = rollDieFour();
 */
+switch(result[i]){
+	case 1:
+	console.log("attack!");
+	case 2:
+	console.log();
+
+
+}
+			
+			
