@@ -98,11 +98,19 @@ function takeTurn(){
 		results.push(rollResult);
 		console.log(results);
 		let turnOneRoll = results[i];
-		while (i === 1){
-			if (results === 1){
-				console.log("You received Eevee, a normal-type Pokemon!");
+		j++;
+		while (j === 1){
+			if (results[i] === 1){
+				console.log("You received Eevee, the evolution Pokemon!");
 			}
-		}
+			else if (results[i] === 2){
+				console.log("You received Rattata, the mouse Pokemon!");
+			}
+			else if (results[i] === 3){
+				console.log("You received Meowth, the Scratch Cat Pokemon!");
+			}
+		//while (j === 2)
+		//}
 		// add this roll as +1 to the roll counter
 		//check if a roll happened, then count the roll and move on to the next index
 		
