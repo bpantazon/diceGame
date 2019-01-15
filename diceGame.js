@@ -100,21 +100,38 @@ function turnOne(){
 		if (results[0] === 1){
 		console.log("You received Eevee, the Evolution Pokemon!");
 		}
-		else if (results[i] === 2){
+		else if (results[0] === 2){
 		console.log("You received Rattata, the Mouse Pokemon!");
-
 		}
-		else if (results[i] === 3){
+		else if (results[0] === 3){
 		console.log("You received Meowth, the Scratch Cat Pokemon!");
 	}
 		
-	
-		}
 	return;
+		}
+
+function turnTwo() {
+	if (results[1] <= 2){
+		console.log("Your opponent sent out Caterpie, a bug type Pokemon!");
+	}
+	else if (results[1] === 3 || results[1] === 4){
+		console.log("Your opponent sent out Pidgey, a flying type Pokemon!");
+	}
+	else if (results[1] >= 5){
+		console.log("Your opponent sent out Nidoran, a poison type Pokemon!");
+	}
+	return;
+}
+
 	
-
-
-console.log(takeTurn());
+function turnThree(){
+	if (results[2] === 1){
+		console.log("You used Headbutt!");
+	}
+	else if (results[2] === 2){
+		
+	}
+}
 
 
 
@@ -124,7 +141,7 @@ console.log(takeTurn());
 	return dice4
 }
 let rollDFour = rollDieFour();
-*/
+
 switch(result[i]){
 	case 1:
 	console.log("attack!");
@@ -134,4 +151,4 @@ switch(result[i]){
 
 }
 			
-			
+*/			
