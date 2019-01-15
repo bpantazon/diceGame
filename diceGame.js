@@ -125,9 +125,13 @@ function turnTwo() {
 function turnThree(){
 	switch (results[2]){
 		case 1: console.log("You used Headbutt!");
+		break;
 		case 2: console.log("You used Tackle!");
+		break;
 		case 3: console.log("You used Dig!");
+		break;
 		case 4: console.log("You used Take Down!");
+		break;
 	}
 	return;
 }
@@ -135,12 +139,19 @@ function turnThree(){
 function turnFour(){
 	switch (results[3]){
 		case 1: console.log("This battle takes place on a Grassland terrain");
+		break;
 		case 2: console.log("This battle takes place in Viridian Forest");
+		break;
 		case 3: console.log("This battle takes place on a Mountainside terrain");
+		break;
 		case 4: console.log("This battle takes place in Mt. Moon!");
+		break;
 		case 5: console.log("This battle takes place on the SS Anne cruise ship!");
+		break;
 		case 6: console.log("This battle takes place on the piers of Vermillion City");
+		break;
 		case 7: console.log("This battle takes place on an all-water terrain");
+		break;
 	}
 	return;
 }
@@ -148,13 +159,21 @@ function turnFour(){
 function turnFive(){
 	switch (results[4]){
 		case 1: console.log("You are fighting for the Boulder Badge from Pewter City");
+		break;
 		case 2: console.log("Your are fighting for the Cascade Badge from Cerulean City");
+		break;
 		case 3: console.log("Your are fighting for the Thunder Badge from Vermillion City");
+		break;
 		case 4: console.log("Your are fighting for the Rainbow Badge from Celedon City");
+		break;
 		case 5: console.log("Your are fighting for the Soul Badge from Fuschia City");
+		break;
 		case 6: console.log("Your are fighting for the Marsh Badge from Saffron City");
+		break;
 		case 7: console.log("Your are fighting for the Volcano Badge from Cinnabar Island");
+		break;
 		case 8: console.log("Your are fighting for the Earth Badge from Viridian City");
+		break;
 	}
 	return;
 }
@@ -163,15 +182,21 @@ function turnSix(){
 	if (results[5] <= 4){
 		console.log("You defeated your opponent!");
 	}
-	else if (results[5] <= 8 && results[5] >= 5) {
+	else if (5 <= results[5] && results[5] <= 8) {
 		console.log("Your attack missed! Opponent knocked you out. You lose.");
 	}
-	else if (results[5] > 12) {
+	else if (9 <= results[5]) {
 		console.log("Team Rocket appeared! They stole your Pokemon. You lose.");
 	}
 	return;
 }
-
+getResults();
+turnOne();
+turnTwo();
+turnThree();
+turnFour();
+turnFive();
+turnSix();
 
 
 /*function rollDieFour(){
