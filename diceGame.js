@@ -149,12 +149,12 @@ function turnFive(){
 	switch (results[4]){
 		case 1: console.log("You are fighting for the Boulder Badge from Pewter City");
 		case 2: console.log("Your are fighting for the Cascade Badge from Cerulean City");
-		case 2: console.log("Your are fighting for the Thunder Badge from Vermillion City");
-		case 2: console.log("Your are fighting for the Rainbow Badge from Celedon City");
-		case 2: console.log("Your are fighting for the Soul Badge from Fuschia City");
-		case 2: console.log("Your are fighting for the Marsh Badge from Saffron City");
-		case 2: console.log("Your are fighting for the Volcano Badge from Cinnabar Island");
-		case 2: console.log("Your are fighting for the Earth Badge from Viridian City");
+		case 3: console.log("Your are fighting for the Thunder Badge from Vermillion City");
+		case 4: console.log("Your are fighting for the Rainbow Badge from Celedon City");
+		case 5: console.log("Your are fighting for the Soul Badge from Fuschia City");
+		case 6: console.log("Your are fighting for the Marsh Badge from Saffron City");
+		case 7: console.log("Your are fighting for the Volcano Badge from Cinnabar Island");
+		case 8: console.log("Your are fighting for the Earth Badge from Viridian City");
 	}
 	return;
 }
