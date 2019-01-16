@@ -70,7 +70,7 @@ function turnThree(){
 			console.log("This battle takes place in Viridian Forest");
 			break;
 		case 3: 
-			console.log("This battle takes place on a Mountainside terrain");
+			console.log("This battle takes place on a Mountainside");
 			break;
 		case 4: 
 			console.log("This battle takes place in Mt. Moon!");
@@ -79,10 +79,10 @@ function turnThree(){
 			console.log("This battle takes place on the SS Anne cruise ship!");
 			break;
 		case 6: 
-			console.log("This battle takes place on the piers of Vermillion City");
+			console.log("This battle takes place at the Fighting Dojo in Saffron City!");
 			break;
 		case 7: 
-			console.log("This battle takes place on an all-water terrain");
+			console.log("This battle takes place in Prof. Oak's lab!");
 			break;
 	}
 }
@@ -93,19 +93,19 @@ function turnFour(){
 			console.log("You are fighting for the Boulder Badge from Pewter City");
 			break;
 		case 2: 
-			console.log("Your are fighting for the Cascade Badge from Cerulean City");
+			console.log("You are fighting for the Cascade Badge from Cerulean City");
 			break;
 		case 3: 
-			console.log("Your are fighting for the Thunder Badge from Vermillion City");
+			console.log("You are fighting for the Thunder Badge from Vermillion City");
 			break;
 		case 4: 
-			console.log("Your are fighting for the Rainbow Badge from Celedon City");
+			console.log("You are fighting for the Rainbow Badge from Celedon City");
 			break;
 		case 5: 
-			console.log("Your are fighting for the Soul Badge from Fuschia City");
+			console.log("You are fighting for the Soul Badge from Fuschia City");
 			break;
 		case 6: 
-			console.log("Your are fighting for the Marsh Badge from Saffron City");
+			console.log("You are fighting for the Marsh Badge from Saffron City");
 			break;
 		case 7: 
 			console.log("Your are fighting for the Volcano Badge from Cinnabar Island");
@@ -136,34 +136,59 @@ While healthValue > 0, and
 if the first result of this roll = 1: Used tackle, subtract from healthValue, create new value for this index
 */
 function turnFive(){
-
-	let tackle = usedTackle();
-	let headbutt = usedHeadbutt();
-	let dig = usedDig();
-	let takeDown = usedTakeDown();
+	//let newAttack = chooseNewAttack();
+	//let tackle = usedTackle();
+	//let headbutt = usedHeadbutt();
+	//let dig = usedDig();
+	//let takeDown = usedTakeDown();
 	while (healthValue > 0){
 		if (results[4] === 1) {
-			console.log(tackle);	
+			console.log("You used Tackle! Opponent lost 2 health");
+			healthValue = healthValue - 2;	
+			chooseNewAttack();
 		}
+
 		if (results[4] === 2) {
 			console.log("You used Headbutt! Opponent lost 6 health");
 			healthValue = healthValue - 6;
+			chooseNewAttack();
 		}
 		if (results[4] === 3) {
 			console.log("You used Dig! Opponent lost 5 health");
 			healthValue = healthValue - 5;
+			chooseNewAttack();
 		}
 		if (results[4] === 4) {
 			console.log("You used Take Down! Opponent lost 10 health");
 			healthValue = healthValue - 10;
+			chooseNewAttack();
 		}
 	}
 }
 
 
-let newAttack = chooseNewAttack();
+
+
 function chooseNewAttack(){
 	let attack = rollDie(sides[4])
+	if (attack === 1){
+		console.log("You used Tackle! Opponent lost 2 health");
+	healthValue = healthValue - 2;
+}
+	else if(attack === 2){
+		console.log("You used Headbutt! Opponent lost 6 health");
+	healthValue = healthValue - 6;
+	}
+	else if (attack === 3){
+		console.log("You used Dig! Opponent lost 5 health");
+	healthValue = healthValue - 5;
+	}
+	else if (attack === 4) {
+		console.log("You used Take Down! Opponent lost 10 health");
+	healthValue = healthValue - 10;
+	}
+	
+	console.log("Your next attack roll was " + attack);
 	return attack;
 }
 
@@ -171,7 +196,7 @@ function chooseNewAttack(){
 function usedTackle() {
 	console.log("You used Tackle! Opponent lost 2 health");
 	healthValue = healthValue - 2;
-	return healthValue;
+	
 }
 
 
@@ -191,23 +216,20 @@ function usedDig() {
 
 function usedTakeDown() {
 	console.log("You used Take Down! Opponent lost 10 health");
-	healthValue = healthValue - 10;
+	newHealthValue = healthValue - 10;
 	return healthValue;
 }
 
 //might need different outcomes for sixth turn if using damage counter
 function turnSix(){
-	if (results[5] <= 4){
+	if (results[5] <= 8){
 		console.log("You defeated your opponent!");
 	}
-	else if (5 <= results[5] && results[5] <= 8) {
-		console.log("Your attack missed! Opponent knocked you out. You lose.");
-	}
-	else if (9 <= results[5]) {
+	else {
 		console.log("Team Rocket appeared! They stole your Pokemon. You lose.");
 	}
-	
 }
+
 
 //Make possible new turnSix with rolls 1-8 having player win, 9-12 having Team Rocket show up
 
