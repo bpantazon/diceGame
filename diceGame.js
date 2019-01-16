@@ -136,10 +136,14 @@ While healthValue > 0, and
 if the first result of this roll = 1: Used tackle, subtract from healthValue, create new value for this index
 */
 function turnFive(){
+
+	let tackle = usedTackle();
+	let headbutt = usedHeadbutt();
+	let dig = usedDig();
+	let takeDown = usedTakeDown();
 	while (healthValue > 0){
 		if (results[4] === 1) {
-			console.log("You used Tackle! Opponent lost 2 health");
-			healthValue = healthValue - 2;
+			console.log(tackle);	
 		}
 		if (results[4] === 2) {
 			console.log("You used Headbutt! Opponent lost 6 health");
@@ -162,6 +166,35 @@ function chooseNewAttack(){
 	let attack = rollDie(sides[4])
 	return attack;
 }
+
+
+function usedTackle() {
+	console.log("You used Tackle! Opponent lost 2 health");
+	healthValue = healthValue - 2;
+	return healthValue;
+}
+
+
+function usedHeadbutt() {
+	console.log("You used Headbutt! Opponent lost 6 health");
+	healthValue = healthValue - 6;
+	return healthValue;
+}
+
+
+function usedDig() {
+	console.log("You used Dig! Opponent lost 5 health");
+	healthValue = healthValue - 5;
+	return healthValue;
+}
+
+
+function usedTakeDown() {
+	console.log("You used Take Down! Opponent lost 10 health");
+	healthValue = healthValue - 10;
+	return healthValue;
+}
+
 //might need different outcomes for sixth turn if using damage counter
 function turnSix(){
 	if (results[5] <= 4){
