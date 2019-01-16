@@ -1,4 +1,4 @@
-let sides = [3, 6, 7, 8, 4, 12]; 
+let sides = [5, 6, 7, 8, 4, 12]; 
 let results = [];
 let rolls = 0; 
 let opponentHealthValues = [20, 25, 30, 35, 40];  
@@ -37,6 +37,12 @@ function turnOne(){
 	}
 	else if (results[0] === 3){
 		console.log("You sent out Charmander, the Fire Lizard Pokemon!");
+	}
+	else if (results[0] === 4){
+		console.log("You sent out Squirtle, the Tiny Turtle Pokemon!");
+	}
+	else if (results[0] === 5){
+		console.log("You sent out Bulbasaur, the Seed Pokemon!");
 	}
 }
 
@@ -125,7 +131,7 @@ function turnFive(){
 			chooseNewAttack();
 		}
 		if (results[4] === 3) {
-			console.log("You used Dig! Opponent lost 5 health");
+			console.log("You used Swift! Opponent lost 5 health");
 			healthValue = healthValue - 5;
 			chooseNewAttack();
 		}
@@ -149,7 +155,7 @@ function chooseNewAttack(){
 	healthValue = healthValue - 6;
 	}
 	else if (attack === 3){
-		console.log("You used Dig! Opponent lost 5 health");
+		console.log("You used Swift! Opponent lost 5 health");
 	healthValue = healthValue - 5;
 	}
 	else if (attack === 4) {
@@ -174,8 +180,8 @@ function usedHeadbutt() {
 }
 
 
-function usedDig() {
-	console.log("You used Dig! Opponent lost 5 health");
+function usedSwift() {
+	console.log("You used Swift! Opponent lost 5 health");
 	healthValue = healthValue - 5;
 	return healthValue;
 }
