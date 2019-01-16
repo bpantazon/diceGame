@@ -23,24 +23,22 @@ function getResults(){
 	for (let i = 0; i < sides.length; i++) {
 		let rollResult = rollDie(sides[i]);
 		results.push(rollResult);
-		console.log(results);
 	}
 	return;
 }
 
 
 function turnOne(){
-		if (results[0] === 1){
+	if (results[0] === 1){
 		console.log("You sent out Eevee, the Evolution Pokemon!");
-		}
-		else if (results[0] === 2){
+	}
+	else if (results[0] === 2){
 		console.log("You sent out Pikachu, the Electric Mouse Pokemon!");
-		}
-		else if (results[0] === 3){
+	}
+	else if (results[0] === 3){
 		console.log("You sent out Charmander, the Fire Lizard Pokemon!");
 	}
-	
-		}
+}
 
 function turnTwo() {
 	if (results[1] <= 2){
@@ -158,8 +156,6 @@ function chooseNewAttack(){
 		console.log("You used Take Down! Opponent lost 10 health");
 	healthValue = healthValue - 10;
 	}
-	
-	//console.log("Your next attack roll was " + attack);
 	return attack;
 }
 
