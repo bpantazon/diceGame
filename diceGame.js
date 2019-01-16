@@ -14,11 +14,6 @@ let hitPoints = opponentHealthValues[health];
 	return hitPoints;
 	}
 
-//not called
-function countRolls() {
-	rolls = rolls + 1; 
-}
-
 function rollDie(sides){
 	let result = Math.floor((Math.random() * sides) + 1);
 	return result;
@@ -116,31 +111,9 @@ function turnFour(){
 	}
 	
 }
-//During turnFive, have each outcome subtract value from healthValue until healthValue = 0, then move on to last turn
-//re-roll turn five until healthValue = 0
-/*function turnFive(){
-	switch (results[4]){
-		case 1 && healthValue > 0: console.log("You used Tackle"); healthValue - 2;
-		break;
-		case 2 && healthValue > 0: console.log("You used Headbutt!"); healthValue - 6;
-		break;
-		case 3 && healthValue > 0: console.log("You used Dig!"); healthValue - 5;
-		break;
-		case 4 && healthValue > 0: console.log("You used Take Down!"); healthValue - 10;
-		break;
-	}	
-}  */
-//potential turnFive with healthValue variable. When healthValue === 0, begin turnSix
-/* 
-While healthValue > 0, and
-if the first result of this roll = 1: Used tackle, subtract from healthValue, create new value for this index
-*/
+
 function turnFive(){
-	//let newAttack = chooseNewAttack();
-	//let tackle = usedTackle();
-	//let headbutt = usedHeadbutt();
-	//let dig = usedDig();
-	//let takeDown = usedTakeDown();
+	
 	while (healthValue > 0){
 		if (results[4] === 1) {
 			console.log("You used Tackle! Opponent lost 2 health");
@@ -167,8 +140,6 @@ function turnFive(){
 }
 
 
-
-
 function chooseNewAttack(){
 	let attack = rollDie(sides[4])
 	if (attack === 1){
@@ -188,7 +159,7 @@ function chooseNewAttack(){
 	healthValue = healthValue - 10;
 	}
 	
-	console.log("Your next attack roll was " + attack);
+	//console.log("Your next attack roll was " + attack);
 	return attack;
 }
 
@@ -220,19 +191,14 @@ function usedTakeDown() {
 	return healthValue;
 }
 
-//might need different outcomes for sixth turn if using damage counter
 function turnSix(){
 	if (results[5] <= 8){
 		console.log("You defeated your opponent!");
 	}
 	else {
-		console.log("Team Rocket appeared! They stole your Pokemon. You lose.");
+		console.log("Team Rocket appeared! They stole your Pokemon. Everyone loses.");
 	}
 }
-
-
-//Make possible new turnSix with rolls 1-8 having player win, 9-12 having Team Rocket show up
-
 
 function playGame(){
 	getResults();
