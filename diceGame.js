@@ -122,22 +122,26 @@ function turnFive(){
 		if (results[4] === 1) {
 			console.log("You used Tackle! Opponent lost 2 health");
 			healthValue = healthValue - 2;	
+			console.log("Opponent health fell to " + healthValue);
 			chooseNewAttack();
 		}
 
 		if (results[4] === 2) {
 			console.log("You used Headbutt! Opponent lost 6 health");
 			healthValue = healthValue - 6;
+			console.log("Opponent health fell to " + healthValue);
 			chooseNewAttack();
 		}
 		if (results[4] === 3) {
 			console.log("You used Swift! Opponent lost 5 health");
 			healthValue = healthValue - 5;
+			console.log("Opponent health fell to " + healthValue);
 			chooseNewAttack();
 		}
 		if (results[4] === 4) {
 			console.log("You used Take Down! Opponent lost 10 health");
 			healthValue = healthValue - 10;
+			console.log("Opponent health fell to " + healthValue);
 			chooseNewAttack();
 		}
 	}
@@ -146,51 +150,29 @@ function turnFive(){
 
 function chooseNewAttack(){
 	let attack = rollDie(sides[4])
+	while (healthValue > 0){
 	if (attack === 1){
 		console.log("You used Tackle! Opponent lost 2 health");
-	healthValue = healthValue - 2;
+		healthValue = healthValue - 2;
+		console.log("Opponent health fell to " + healthValue);
 }
 	else if(attack === 2){
 		console.log("You used Headbutt! Opponent lost 6 health");
-	healthValue = healthValue - 6;
+		healthValue = healthValue - 6;
+		console.log("Opponent health fell to " + healthValue);
 	}
 	else if (attack === 3){
 		console.log("You used Swift! Opponent lost 5 health");
-	healthValue = healthValue - 5;
+		healthValue = healthValue - 5;
+		console.log("Opponent health fell to " + healthValue);
 	}
 	else if (attack === 4) {
 		console.log("You used Take Down! Opponent lost 10 health");
-	healthValue = healthValue - 10;
+		healthValue = healthValue - 10;
+		console.log("Opponent health fell to " + healthValue);
 	}
 	return attack;
 }
-
-
-function usedTackle() {
-	console.log("You used Tackle! Opponent lost 2 health");
-	healthValue = healthValue - 2;
-	
-}
-
-
-function usedHeadbutt() {
-	console.log("You used Headbutt! Opponent lost 6 health");
-	healthValue = healthValue - 6;
-	return healthValue;
-}
-
-
-function usedSwift() {
-	console.log("You used Swift! Opponent lost 5 health");
-	healthValue = healthValue - 5;
-	return healthValue;
-}
-
-
-function usedTakeDown() {
-	console.log("You used Take Down! Opponent lost 10 health");
-	newHealthValue = healthValue - 10;
-	return healthValue;
 }
 
 function turnSix(){
