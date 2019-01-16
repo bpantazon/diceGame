@@ -1,10 +1,12 @@
 let sides = [3, 6, 7, 8, 4, 12]; 
 let results = [];
 let rolls = 0; 
-let opponentHealthValues = [20, 30, 40, 50, 60];  
+let opponentHealthValues = [20, 25, 30, 35, 40];  
 let healthValue = makeOpponentHealth();
 
-
+function tellOpponentHealth(){
+	console.log("Opponent's health is " + healthValue);
+}
 
 function makeOpponentHealth() {
 let health = [Math.floor(Math.random() * opponentHealthValues.length)];
@@ -12,7 +14,7 @@ let hitPoints = opponentHealthValues[health];
 	return hitPoints;
 	}
 
-
+//not called
 function countRolls() {
 	rolls = rolls + 1; 
 }
@@ -30,6 +32,7 @@ function getResults(){
 	}
 	return;
 }
+
 
 function turnOne(){
 		if (results[0] === 1){
@@ -115,23 +118,49 @@ function turnFour(){
 }
 //During turnFive, have each outcome subtract value from healthValue until healthValue = 0, then move on to last turn
 //re-roll turn five until healthValue = 0
-function turnFive(){
+/*function turnFive(){
 	switch (results[4]){
-		case 1 && (healthValue > 0): console.log("You used Tackle"); healthValue - 2;
+		case 1 && healthValue > 0: console.log("You used Tackle"); healthValue - 2;
 		break;
-		case 2 && (healthValue > 0): console.log("You used Headbutt!"); healthValue - 5;
+		case 2 && healthValue > 0: console.log("You used Headbutt!"); healthValue - 6;
 		break;
-		case 3 && (healthValue > 0): console.log("You used Dig!"); healthValue - 5;
+		case 3 && healthValue > 0: console.log("You used Dig!"); healthValue - 5;
 		break;
-		case 4 && (healthValue > 0): console.log("You used Take Down!"); healthValue - 10;
+		case 4 && healthValue > 0: console.log("You used Take Down!"); healthValue - 10;
 		break;
 	}	
-}
+}  */
 //potential turnFive with healthValue variable. When healthValue === 0, begin turnSix
+/* 
+While healthValue > 0, and
+if the first result of this roll = 1: Used tackle, subtract from healthValue, create new value for this index
+*/
 function turnFive(){
-	if (healthValue > 0){
-
+	while (healthValue > 0){
+		if (results[4] === 1) {
+			console.log("You used Tackle! Opponent lost 2 health");
+			healthValue = healthValue - 2;
+		}
+		if (results[4] === 2) {
+			console.log("You used Headbutt! Opponent lost 6 health");
+			healthValue = healthValue - 6;
+		}
+		if (results[4] === 3) {
+			console.log("You used Dig! Opponent lost 5 health");
+			healthValue = healthValue - 5;
+		}
+		if (results[4] === 4) {
+			console.log("You used Take Down! Opponent lost 10 health");
+			healthValue = healthValue - 10;
+		}
 	}
+}
+
+
+let newAttack = chooseNewAttack();
+function chooseNewAttack(){
+	let attack = rollDie(sides[4])
+	return attack;
 }
 //might need different outcomes for sixth turn if using damage counter
 function turnSix(){
@@ -154,6 +183,7 @@ function playGame(){
 	getResults();
 	turnOne();
 	turnTwo();
+	tellOpponentHealth();
 	turnThree();
 	turnFour();
 	turnFive();
