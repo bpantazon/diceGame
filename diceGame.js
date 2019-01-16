@@ -2,10 +2,16 @@ let sides = [5, 6, 7, 8, 4, 12];
 let results = [];
 let rolls = 0; 
 let opponentHealthValues = [20, 25, 30, 35, 40];  
-let healthValue = makeOpponentHealth();
+let opponentHealthValue = makeOpponentHealth();
+
+function makePlayerHealth(){
+	let health = [Math.floor(Math.random() * opponentHealthValues.length)];
+	let hitPoints = opponentHealthValues[health];
+		return hitPoints;
+}
 
 function tellOpponentHealth(){
-	console.log("Opponent's health is " + healthValue);
+	console.log("Opponent's health is " + opponentHealthValue);
 }
 
 function makeOpponentHealth() {
@@ -89,28 +95,28 @@ function turnThree(){
 function turnFour(){
 	switch (results[3]){
 		case 1: 
-			console.log("You are fighting for the Boulder Badge from Pewter City");
+			console.log("You are fighting to earn the Boulder Badge from Pewter City");
 			break;
 		case 2: 
-			console.log("You are fighting for the Cascade Badge from Cerulean City");
+			console.log("You are fighting to earn the Cascade Badge from Cerulean City");
 			break;
 		case 3: 
-			console.log("You are fighting for the Thunder Badge from Vermillion City");
+			console.log("You are fighting to earn the Thunder Badge from Vermillion City");
 			break;
 		case 4: 
-			console.log("You are fighting for the Rainbow Badge from Celedon City");
+			console.log("You are fighting to earn the Rainbow Badge from Celedon City");
 			break;
 		case 5: 
-			console.log("You are fighting for the Soul Badge from Fuschia City");
+			console.log("You are fighting to earn the Soul Badge from Fuschia City");
 			break;
 		case 6: 
-			console.log("You are fighting for the Marsh Badge from Saffron City");
+			console.log("You are fighting to earn the Marsh Badge from Saffron City");
 			break;
 		case 7: 
-			console.log("Your are fighting for the Volcano Badge from Cinnabar Island");
+			console.log("Your are fighting to earn the Volcano Badge from Cinnabar Island");
 			break;
 		case 8: 
-			console.log("Your are fighting for the Earth Badge from Viridian City");
+			console.log("Your are fighting to earn the Earth Badge from Viridian City");
 			break;
 	}
 	
@@ -118,30 +124,29 @@ function turnFour(){
 
 function turnFive(){
 	
-	while (healthValue > 0){
+	while (opponentHealthValue > 0){
 		if (results[4] === 1) {
 			console.log("You used Tackle! Opponent lost 2 health");
-			healthValue = healthValue - 2;	
-			console.log("Opponent health fell to " + healthValue);
+			opponentHealthValue = opponentHealthValue - 2;	
+			console.log("Opponent health fell to " + opponentHealthValue);
 			chooseNewAttack();
 		}
-
 		if (results[4] === 2) {
 			console.log("You used Headbutt! Opponent lost 6 health");
-			healthValue = healthValue - 6;
-			console.log("Opponent health fell to " + healthValue);
+			opponentHealthValue = opponentHealthValue - 6;
+			console.log("Opponent health fell to " + opponentHealthValue);
 			chooseNewAttack();
 		}
 		if (results[4] === 3) {
 			console.log("You used Swift! Opponent lost 5 health");
-			healthValue = healthValue - 5;
-			console.log("Opponent health fell to " + healthValue);
+			opponentHealthValue = opponentHealthValue - 5;
+			console.log("Opponent health fell to " + opponentHealthValue);
 			chooseNewAttack();
 		}
 		if (results[4] === 4) {
 			console.log("You used Take Down! Opponent lost 10 health");
-			healthValue = healthValue - 10;
-			console.log("Opponent health fell to " + healthValue);
+			opponentHealthValue = opponentHealthValue - 10;
+			console.log("Opponent health fell to " + opponentHealthValue);
 			chooseNewAttack();
 		}
 	}
@@ -150,26 +155,26 @@ function turnFive(){
 
 function chooseNewAttack(){
 	let attack = rollDie(sides[4])
-	while (healthValue > 0){
+	while (opponentHealthValue > 0){
 	if (attack === 1){
 		console.log("You used Tackle! Opponent lost 2 health");
-		healthValue = healthValue - 2;
-		console.log("Opponent health fell to " + healthValue);
+		opponentHealthValue = opponentHealthValue - 2;
+		console.log("Opponent health fell to " + opponentHealthValue);
 }
 	else if(attack === 2){
 		console.log("You used Headbutt! Opponent lost 6 health");
-		healthValue = healthValue - 6;
-		console.log("Opponent health fell to " + healthValue);
+		opponentHealthValue = opponentHealthValue - 6;
+		console.log("Opponent health fell to " + opponentHealthValue);
 	}
 	else if (attack === 3){
 		console.log("You used Swift! Opponent lost 5 health");
-		healthValue = healthValue - 5;
-		console.log("Opponent health fell to " + healthValue);
+		opponentHealthValue = opponentHealthValue - 5;
+		console.log("Opponent health fell to " + opponentHealthValue);
 	}
 	else if (attack === 4) {
 		console.log("You used Take Down! Opponent lost 10 health");
-		healthValue = healthValue - 10;
-		console.log("Opponent health fell to " + healthValue);
+		opponentHealthValue = opponentHealthValue - 10;
+		console.log("Opponent health fell to " + opponentHealthValue);
 	}
 	return attack;
 }
