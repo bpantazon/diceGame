@@ -152,7 +152,6 @@ function turnFive(){
 	}
 }
 
-
 function chooseNewAttack(){
 	let attack = rollDie(sides[4])
 	while (opponentHealthValue > 0){
